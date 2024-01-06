@@ -1,0 +1,37 @@
+body {
+    background-color: #333;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.todo-item {
+    background-color: #444;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo-item h1, .todo-item h2 {
+    margin: 0;
+}
+
+.todo-item button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.todo-item button:hover {
+    background-color: #666;
+}
+
+.completed {
+    font-style: italic;
+    text-decoration: line-through;
+}
