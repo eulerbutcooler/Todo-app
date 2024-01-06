@@ -1,11 +1,13 @@
-##TODO APP
+## TODO APP
 
-This project contains a simple TODO application
-It has the following features -
+This project uses MERN stack to make a very simple todo app.
 
-- Anyone can create a todo
-- Anyone can see their existing todos
-- Anyone can mark a todo as done
+*Features* :
 
-// Initialize a node project
-// 
+- Create a todo that is saved in a mongodb cluster.
+- Mark the todo as done when the task is done.
+- Delete the todo.
+
+I'll be adding more features and fixing the bugs every week.
+
+``` There are some bugs in the code for instance the added todo doesn't appear on the page until you refresh the page. ```
