@@ -4,10 +4,11 @@ const {todo} = require('./db');
 const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 3000;
-app.listen(port);
 
 app.use(express.json())
 app.use(cors());
+
+app.use(express.static(path.join(__dirname, '../frontend/dist')))
 
 app.post("/todo", async (req,res)=>{
     const createPayload = req.body;
@@ -57,3 +58,5 @@ app.delete("/todo", async (req, res) => {
         res.status(500).json({ msg: "Failed to delete todo" });
     }
 });
+
+app.listen(port);
