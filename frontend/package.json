@@ -4,9 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start:backend": "cd ../backend && node index.js",
-    "start": "node backend/index.js",
-    "dev": "concurrently \"npm run start:backend\" \"vite\"",
+    "start": "serve -s dist",
+    "dev": "vite",
     "build": "vite build",
     "postinstall": "npm run build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
@@ -14,7 +13,8 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "serve": "^14.2.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
