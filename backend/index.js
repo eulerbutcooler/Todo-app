@@ -25,13 +25,17 @@ app.post("/todo", async (req,res)=>{
         return;
     }
     
-    const newTodo = await todo.create({
-        title: createPayload.title,
-        description: createPayload.description,
-        completed: false
-    })
+    try {
+        const newTodo = await todo.create({
+            title: createPayload.title,
+            description: createPayload.description,
+            completed: false
+        })
 
-    res.json(newTodo)
+        res.json(newTodo)
+    } catch (error) {
+        res.status(500).json({ msg: 'An error occurred while creating the todo' });
+    }
 })
 
 app.get("/todos", async (req,res)=>{
@@ -64,8 +68,8 @@ app.delete("/todo", async (req, res) => {
     }
 });
 
-app.get('*', (req, res) => {
-    res.send('Route not found');
-  });
+app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
+});
 
 app.listen(port);
