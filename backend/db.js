@@ -1,6 +1,14 @@
+
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+  }
+  
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb+srv://eulerbutcooler:aightmate@cluster0.hcm7qwb.mongodb.net/todos?retryWrites=true&w=majority')
+mongoose.connect(process.env.DB_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
 
 const todoSchema = new mongoose.Schema({
     title: String,

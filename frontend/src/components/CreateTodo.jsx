@@ -29,7 +29,7 @@ export function CreateTodo({ setTodos }) {
   };
 
   const createTodo = async () => {
-    const response = await fetch("http://localhost:3000/todos", {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/todos`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -64,7 +64,7 @@ export function CreateTodo({ setTodos }) {
         <button
           style={buttonStyle}
           onClick={() => {
-            fetch("http://localhost:3000/todo", {
+            fetch(`${process.env.REACT_APP_API_URL}/todo`, {
               method: "POST",
               body: JSON.stringify({
                 title: title,

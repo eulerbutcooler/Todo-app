@@ -2,7 +2,7 @@ import "./Todos.css";
 
 export function Todos({ todos, fetchTodos }) {
   const markAsDone = async (_id) => {
-    const response = await fetch("http://localhost:3000/completed", {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/completed`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -18,7 +18,7 @@ export function Todos({ todos, fetchTodos }) {
   };
 
   const deleteTodo = async (_id) => {
-    const response = await fetch(`http://localhost:3000/todo`, {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/todo`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
