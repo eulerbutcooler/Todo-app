@@ -64,4 +64,8 @@ app.delete("/todo", async (req, res) => {
     }
 });
 
+app.get('*', (req, res) => {
+    res.send('Route not found');
+  });
+
 app.listen(port);
