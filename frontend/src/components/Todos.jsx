@@ -2,7 +2,7 @@ import "./Todos.css";
 
 export function Todos({ todos, fetchTodos }) {
   const markAsDone = async (_id) => {
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/completed`, {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/todo/${_id}/completed`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -18,7 +18,7 @@ export function Todos({ todos, fetchTodos }) {
   };
 
   const deleteTodo = async (_id) => {
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/todo`, {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/todo/${_id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

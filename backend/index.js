@@ -44,11 +44,11 @@ app.get("/todos", async (req,res)=>{
     res.json(todos);
 })
 
-app.put("/completed", async (req, res) => {
-    const { _id } = req.body;
+app.put("/todo/:id/completed", async (req, res) => {
+    const { id } = req.params;
 
     try {
-        await todo.updateOne({ _id }, { completed: true });
+        await todo.updateOne({ _id: id }, { completed: true });
         res.json({ msg: "Todo marked as completed" });
     } catch (err) {
         console.error(err);
@@ -56,11 +56,11 @@ app.put("/completed", async (req, res) => {
     }
 });
 
-app.delete("/todo", async (req, res) => {
-    const { _id } = req.body;
+app.delete("/todo/:id", async (req, res) => {
+    const { id } = req.params;
 
     try {
-        await todo.deleteOne({ _id });
+        await todo.deleteOne({ _id: id });
         res.json({ msg: "Todo deleted" });
     } catch (err) {
         console.error(err);

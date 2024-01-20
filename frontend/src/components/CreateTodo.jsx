@@ -29,13 +29,17 @@ export function CreateTodo({ setTodos }) {
   };
 
   const createTodo = async () => {
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/todos`, {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/todo`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ title, description }),
     });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
 
     const newTodo = await response.json();
 
@@ -77,8 +81,8 @@ export function CreateTodo({ setTodos }) {
               .then((response) => response.json())
               .then((data) => {
                 console.log(data);
-                if(data){
-                setTodos((todos) => [...todos, data]);
+                if (data) {
+                  setTodos((todos) => [...todos, data]);
                 }
               })
               .catch((error) => {
