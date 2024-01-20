@@ -5,7 +5,7 @@ if (process.env.NODE_ENV !== 'production') {
   
 const mongoose = require('mongoose')
 
-mongoose.connect(process.env.REACT_APP_DB_URL, {
+mongoose.connect(process.env.VITE_APP_DB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
