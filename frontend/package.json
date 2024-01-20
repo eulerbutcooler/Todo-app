@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "start:backend": "cd ../backend && node index.js",
+    "start": "node server.js",
     "dev": "concurrently \"npm run start:backend\" \"vite\"",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
