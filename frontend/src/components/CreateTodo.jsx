@@ -29,7 +29,7 @@ export function CreateTodo({ setTodos }) {
   };
 
   const createTodo = async () => {
-    const response = await fetch(`${process.env.VITE_APP_API_URL}/todos`, {
+    const response = await fetch(`${process.env.VITE_API_URL}/todos`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -64,7 +64,7 @@ export function CreateTodo({ setTodos }) {
         <button
           style={buttonStyle}
           onClick={() => {
-            fetch(`${process.env.REACT_APP_API_URL}/todo`, {
+            fetch(`${process.env.VITE_API_URL}/todo`, {
               method: "POST",
               body: JSON.stringify({
                 title: title,
