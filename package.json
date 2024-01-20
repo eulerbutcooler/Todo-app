@@ -3,6 +3,6 @@
     "concurrently": "^8.2.2"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node backend/index.js"
   }
 }
