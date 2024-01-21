@@ -2,3 +2,34 @@
     font-style: italic;
     text-decoration: line-through;
 }
+
+.todos {
+    max-height: 800px; 
+    overflow-y: auto; 
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 14px;
+    line-height: 1.5; 
+  }
+  
+  .todos .todo {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd; 
+  }
+  
+  .todos .todo:last-child {
+    border-bottom: none;
+  }
+
+  .todos::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .todos::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 5px;
+  }
+  
+  .todos::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }

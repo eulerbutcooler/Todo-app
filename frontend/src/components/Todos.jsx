@@ -36,9 +36,9 @@ export function Todos({ todos, fetchTodos }) {
   console.log(todos);
 
   return (
-    <div>
+    <div className="todos">
       {todos.map((todo) => (
-        <div key={todo._id}>
+        <div key={todo._id} className="todo">
           <h1 className={todo.completed ? "completed" : ""}>{todo.title}</h1>
           <h2 className={todo.completed ? "completed" : ""}>
             {todo.description}
