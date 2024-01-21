@@ -4,7 +4,7 @@
 }
 
 .todos {
-    max-height: 800px; 
+    max-height: 700px; 
     overflow-y: auto; 
     padding: 10px;
     margin: 10px 0;
@@ -36,6 +36,6 @@
 
   @media screen and (max-width: 600px) {
     .todos {
-      max-height: 400px;
+      max-height: 300px;
     }
   }
