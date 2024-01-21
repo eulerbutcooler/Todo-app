@@ -16,10 +16,25 @@ function App() {
     fetchTodos();
   }, [])
 
+function Footer() {
+  return (
+    <footer className='footer'>
+      <p className='footer-text' >Made by Amaan</p>
+      <p>
+        <a className='footer-link' href="https://twitter.com/eulerbutcooler" target="_blank" rel="noopener noreferrer">
+          @eulerbutcooler
+        </a>
+      </p>
+    </footer>
+  );
+}
+
+
   return (
     <div>
      <CreateTodo setTodos={setTodos}></CreateTodo>
      <Todos todos={todos} fetchTodos={fetchTodos}></Todos>
+     <Footer/>
     </div>
   )
 }

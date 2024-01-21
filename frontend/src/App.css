@@ -1,48 +1,68 @@
 body {
-    display: flex;
-    justify-content: left;
-    align-items: left;
-    height: 100vh;
-    margin: 5;
-    background-color: #333;
-    color: #fff;
-    font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  height: 100vh;
+  margin: 5;
+  background-color: #333;
+  color: #fff;
+  font-family: Arial, sans-serif;
 }
 
 .container {
-    width: 80%;
-    max-width: 800px;
+  width: 80%;
+  max-width: 800px;
 }
 
 .create-todo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .create-todo input {
-    flex-grow: 1;
-    margin-right: 10px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #555;
-    color: #fff;
-    font-size: 16px;
+  flex-grow: 1;
+  margin-right: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #555;
+  color: #fff;
+  font-size: 16px;
 }
 
 .create-todo button {
-    background-color: #777;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+  background-color: #777;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
 .create-todo button:hover {
-    background-color: #888;
+  background-color: #888;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.footer-text,
+.footer-link {
+  color: white;
+}
+
+.footer-link:hover {
+  color: white;
+  text-shadow: 0 0 2px white, 0 0 3px white, 0 0 4px white, 0 0 5px white;
+  transition: text-shadow 0.3s ease
 }
