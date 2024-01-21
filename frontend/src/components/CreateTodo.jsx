@@ -70,28 +70,32 @@ export function CreateTodo({ setTodos }) {
         <button
           style={buttonStyle}
           onClick={() => {
-            fetch(`${import.meta.env.VITE_API_URL}/todo`, {
-              method: "POST",
-              body: JSON.stringify({
-                title: title,
-                description: description,
-              }),
-              headers: {
-                "Content-Type": "application/json",
-              },
-            })
-              .then((response) => response.json())
-              .then((data) => {
-                console.log(data);
-                if (data) {
-                  setTodos((todos) => [...todos, data]);
-                  setTitle("");
-                  setDescription("");
-                }
+            if (title.trim() !== "" && description.trim() !== "") {
+              fetch(`${import.meta.env.VITE_API_URL}/todo`, {
+                method: "POST",
+                body: JSON.stringify({
+                  title: title,
+                  description: description,
+                }),
+                headers: {
+                  "Content-Type": "application/json",
+                },
               })
-              .catch((error) => {
-                console.error("Error:", error);
-              });
+                .then((response) => response.json())
+                .then((data) => {
+                  console.log(data);
+                  if (data) {
+                    setTodos((todos) => [...todos, data]);
+                    setTitle("");
+                    setDescription("");
+                  }
+                })
+                .catch((error) => {
+                  console.error("Error:", error);
+                });
+            } else {
+              alert("Both title and description must be filled out");
+            }
           }}
         >
           Add a todo
