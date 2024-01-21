@@ -33,3 +33,9 @@
   .todos::-webkit-scrollbar-thumb:hover {
     background: #555; 
   }
+
+  @media screen and (max-width: 600px) {
+    .todos {
+      max-height: 400px;
+    }
+  }
