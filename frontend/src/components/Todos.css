@@ -36,6 +36,6 @@
 
   @media screen and (max-width: 600px) {
     .todos {
-      max-height: 300px;
+      max-height: 350px;
     }
   }
