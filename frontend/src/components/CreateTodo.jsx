@@ -55,6 +55,7 @@ export function CreateTodo({ setTodos }) {
           style={inputStyle}
           type="text"
           placeholder="title"
+          value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
       </div>
@@ -63,6 +64,7 @@ export function CreateTodo({ setTodos }) {
           style={inputStyle}
           type="text"
           placeholder="description"
+          value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
       </div>
