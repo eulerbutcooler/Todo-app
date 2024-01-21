@@ -44,8 +44,6 @@ export function CreateTodo({ setTodos }) {
     const newTodo = await response.json();
 
     setTodos((prevTodos) => [...prevTodos, newTodo]);
-    setTitle("");
-    setDescription("");
   };
 
   return (
@@ -87,6 +85,8 @@ export function CreateTodo({ setTodos }) {
                 console.log(data);
                 if (data) {
                   setTodos((todos) => [...todos, data]);
+                  setTitle("");
+                  setDescription("");
                 }
               })
               .catch((error) => {
